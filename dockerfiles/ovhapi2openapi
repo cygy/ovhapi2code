@@ -1,0 +1,17 @@
+FROM golang:1.6
+
+RUN mkdir -p /go/src/com.ovh
+WORKDIR /go/src/com.ovh
+
+RUN git clone https://github.com/cygy/ovhapi2openapi.git
+WORKDIR /go/src/com.ovh/ovhapi2openapi
+
+RUN go get -v && go install -v
+
+RUN mkdir /data
+VOLUME /data
+
+RUN mkdir /output
+VOLUME /output
+
+ENTRYPOINT ["ovhapi2openapi", "-i", "/data/api.yaml", "-o", "/output/openapi.yaml"]
