@@ -26,7 +26,7 @@ $ make all
 $ ovhapi2code.sh ~/ovhapi.yaml ~/output swift
 ```
 
-> The first argument is the path of the `.yaml` file containing metadata, the second argument is the output directory and the third argument is the language of the generated code source.
+> The first argument is the path of the `.yaml` file containing metadata, the second argument is the output directory and the third argument is the language of the generated code.
 
 > Here the directory ~/output will contain the file `openapi.yaml` and a directory `swift` containing the code source in `Swift` based on the OVH API.
 
